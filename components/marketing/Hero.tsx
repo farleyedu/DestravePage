@@ -5,8 +5,7 @@ import { handleCheckoutClick } from "@/lib/tracking";
 import ProductMockup from "./ProductMockup";
 
 /**
- * Seção Hero (acima da dobra)
- * Grid 60/40 com headline forte + mockup do produto
+ * Hero: headline, subheadline, CTA e mockup editorial.
  */
 export default function Hero() {
   const scrollToContents = () => {
@@ -17,50 +16,55 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen flex items-center py-section-mobile md:py-section-desktop bg-bg-base">
-      <div className="container-custom w-full">
-        {/* Grid 60/40 (responsivo) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center">
-          {/* Lado esquerdo: Copy */}
-          <div className="space-y-8">
-            {/* Headline */}
-            <h1 className="text-hero-mobile md:text-hero-desktop font-bold text-text-primary leading-tight">
-              Você não está travado por falta de capacidade.
-              <br />
-              <span className="text-text-secondary">Está travado por falta de direção.</span>
-            </h1>
+    <section className="relative overflow-x-hidden bg-bg-base min-h-[100svh] lg:min-h-screen flex items-center">
+      <div className="absolute inset-0 pointer-events-none opacity-60">
+        <div className="absolute -top-32 right-0 h-64 w-64 rounded-full bg-cta-primary/10 blur-3xl" />
+        <div className="absolute top-20 -left-10 h-72 w-72 rounded-full bg-success/20 blur-3xl" />
+      </div>
 
-            {/* Subheadline */}
-            <p className="text-body text-text-secondary max-w-2xl">
-              {CONFIG.PRODUCT_NAME} é um guia direto e prático para quem sabe que pode mais, mas vive sabotando a própria ação, clareza e consistência.
+      <div className="container-custom relative w-full py-10 md:py-14 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-10 lg:gap-12 items-center">
+          <div className="space-y-6 md:space-y-8">
+            <p className="text-[0.65rem] sm:text-xs tracking-[0.35em] uppercase text-text-muted">
+              Guia prático em PDF
             </p>
 
-            {/* Proof points (inline) */}
-            <div className="flex flex-wrap gap-6 text-sm md:text-base text-text-secondary">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">📄</span>
-                <span>{CONFIG.PAGES} páginas</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">⏱️</span>
-                <span>{CONFIG.READING_TIME}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✏️</span>
-                <span>{CONFIG.EXERCISES_COUNT} exercícios práticos</span>
-              </div>
+            <h1 className="text-[clamp(2.1rem,4.2vw,4rem)] font-bold text-text-primary leading-[1.05]">
+              Você não está travado por falta de capacidade.
+              <br />
+              <span className="text-text-secondary">
+                Está travado por falta de direção.
+              </span>
+            </h1>
+
+            <p className="text-base md:text-body text-text-secondary max-w-2xl">
+              {CONFIG.PRODUCT_NAME} é um guia direto e prático para quem sabe que pode mais,
+              mas vive sabotando a própria ação, clareza e consistência.
+            </p>
+
+            <div className="flex flex-wrap gap-3 text-xs sm:text-sm text-text-secondary">
+              {[
+                `${CONFIG.PAGES} páginas`,
+                CONFIG.READING_TIME,
+                `${CONFIG.EXERCISES_COUNT} exercícios`,
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="px-4 py-2 rounded-full border border-border bg-bg-card/70"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
 
-            {/* CTA primário */}
             <div className="space-y-4">
               <button
                 onClick={() => handleCheckoutClick("Hero CTA")}
-                className="bg-cta-primary text-white px-10 py-4 rounded-lg font-semibold text-base hover:bg-cta-hover hover:scale-105 transition-smooth shadow-lg hover:shadow-xl"
+                className="bg-cta-primary text-black px-10 py-4 rounded-lg font-semibold text-base hover:bg-cta-hover hover:scale-[1.02] transition-smooth shadow-lg hover:shadow-xl"
               >
                 Quero acessar agora por {CONFIG.PRICE_FORMATTED}
               </button>
 
-              {/* Link secundário discreto */}
               <div>
                 <button
                   onClick={scrollToContents}
@@ -72,10 +76,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Lado direito: Mockup do produto */}
           <div className="hidden lg:block">
             <ProductMockup />
           </div>
+        </div>
+
+        <div className="mt-10 lg:hidden">
+          <ProductMockup />
         </div>
       </div>
     </section>

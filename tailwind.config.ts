@@ -10,30 +10,31 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          base: "#FDFCFA",
-          alt: "#F7F6F3",
-          card: "#FFFFFF",
-          footer: "#F0EFEB",
+          base: "#0E0E0E",
+          alt: "#1F1F1F",
+          card: "#1A1A1A",
+          footer: "#121212",
         },
         text: {
-          primary: "#1A1A1A",
-          secondary: "#4A5568",
-          muted: "#9CA3AF",
+          primary: "#EAEAEA",
+          secondary: "#CFCFCF",
+          muted: "#9A9A9A",
         },
         cta: {
-          primary: "#000000",
-          hover: "#2D2D2D",
+          primary: "#C6A75E",
+          hover: "#B99544",
         },
-        accent: "#2563EB",
+        accent: "#C6A75E",
         border: {
-          DEFAULT: "#E5E4E0",
-          strong: "#D1D0CC",
+          DEFAULT: "#2B2B2B",
+          strong: "#3A3A3A",
         },
-        success: "#10B981",
-        error: "#EF4444",
+        success: "#1F3D2B",
+        error: "#3B2620",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-playfair)", "Times New Roman", "serif"],
       },
       fontSize: {
         "hero-desktop": ["3.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],

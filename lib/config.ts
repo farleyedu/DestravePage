@@ -1,17 +1,18 @@
 /**
- * Configurações centralizadas do produto e checkout
+ * Configuracoes centralizadas do produto e checkout.
  */
 
 export const CONFIG = {
   // Produto
   PRODUCT_NAME: "DESTRAVE 2026",
-  PRODUCT_SUBTITLE: "Clareza, foco e ação para sair da estagnação e assumir o controle da própria vida.",
-  PRICE: 37.00,
+  PRODUCT_SUBTITLE:
+    "Clareza, foco e ação para sair da estagnação e assumir o controle da própria vida.",
+  PRICE: 37.0,
   PRICE_FORMATTED: "R$ 37,00",
 
   // Detalhes do produto
   PAGES: 16,
-  READING_TIME: "40–50 minutos",
+  READING_TIME: "40–50 min",
   EXERCISES_COUNT: 5,
 
   // Garantia
@@ -26,17 +27,20 @@ export const CONFIG = {
   // Autor
   AUTHOR: {
     name: "Natã Delfino",
-    // bio: "Adicione aqui a bio curta quando disponível",
+    role: "Autor do guia",
+    bio: "Criador do DESTRAVE 2026. Linguagem direta, foco em clareza, decisão e ação.",
   },
 
   // SEO
   SEO: {
-    title: "DESTRAVE 2026 — Clareza, Decisão e Ação",
-    description: "Guia prático de 16 páginas para quem sabe que pode mais, mas vive sabotando a própria ação, clareza e consistência. R$ 37,00 • Garantia de 7 dias.",
-    keywords: "clareza mental, decisão, ação, produtividade, foco, ebook, guia prático",
+    title: "DESTRAVE 2026 — Clareza, foco e ação",
+    description:
+      "Ebook direto e prático para quem sabe que pode mais, mas trava na execução. 16 páginas, 5 capítulos, 5 exercícios. R$ 37,00 com garantia de 7 dias.",
+    keywords:
+      "clareza, decisao, acao, foco, ebook, produtividade, desenvolvimento pessoal, guia pratico",
   },
 
-  // Capítulos
+  // Capitulos
   CHAPTERS: [
     "A Mente é o Primeiro Campo de Batalha",
     "Clareza Não é Motivação",
@@ -45,7 +49,7 @@ export const CONFIG = {
     "Direção Vale Mais que Intensidade",
   ],
 
-  // Exercícios
+  // Exercicios
   EXERCISES: [
     "Diagnóstico de confusão mental (checklist)",
     "Mapa de distrações e sabotagens",
@@ -58,15 +62,18 @@ export const CONFIG = {
   PILLARS: [
     {
       title: "CLAREZA",
-      description: "Entender por que você trava — e o que está te sabotando.",
+      description:
+        "Identificar o que trava e cortar ruído para enxergar o que importa agora.",
     },
     {
       title: "DECISÃO",
-      description: "Parar de negociar consigo mesmo. Decisão como ato de identidade, não impulso.",
+      description:
+        "Assumir escolhas de forma consciente, sem negociar com a própria identidade.",
     },
     {
       title: "AÇÃO",
-      description: "Disciplina sem depender de motivação. Ação sustentada, não intensidade vazia.",
+      description:
+        "Transformar direção em rotina mínima, com consistência sem picos vazios.",
     },
   ],
 } as const;

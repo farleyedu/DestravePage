@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONFIG } from "@/lib/config";
 
 export const metadata = {
   title: "Termos de Uso | DESTRAVE 2026",
@@ -8,184 +9,171 @@ export const metadata = {
 export default function TermosDeUso() {
   return (
     <div className="min-h-screen bg-bg-base">
-      {/* Header simples */}
       <header className="py-6 bg-bg-card border-b border-border">
         <div className="container-custom">
           <Link
             href="/"
             className="text-text-primary hover:text-text-secondary transition-smooth"
           >
-            ← Voltar para home
+            {"<-"} Voltar para home
           </Link>
         </div>
       </header>
 
-      {/* Conteúdo */}
       <main className="py-12 md:py-20">
         <div className="container-custom max-w-4xl">
-          <article className="prose prose-lg max-w-none">
-            <h1 className="text-h2-mobile md:text-h2-desktop font-bold text-text-primary mb-8">
-              Termos de Uso
-            </h1>
-
-            <p className="text-text-secondary mb-8">
-              <strong>Última atualização:</strong> 30 de dezembro de 2024
-            </p>
-
-            <div className="space-y-8 text-text-primary">
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  1. Aceitação dos Termos
-                </h2>
-                <p className="text-body text-text-secondary">
-                  Ao acessar e usar este site, você concorda em cumprir e estar vinculado aos presentes Termos de Uso. Se você não concordar com qualquer parte destes termos, não utilize este site nem adquira o produto.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  2. Sobre o Produto
-                </h2>
-                <p className="text-body text-text-secondary mb-4">
-                  <strong>Nome do produto:</strong> DESTRAVE 2026
-                  <br />
-                  <strong>Formato:</strong> Ebook em PDF (16 páginas)
-                  <br />
-                  <strong>Preço:</strong> R$ 37,00
-                </p>
-                <p className="text-body text-text-secondary">
-                  O produto é um <strong>infoproduto digital</strong> entregue exclusivamente em formato PDF via e-mail e área de membros da plataforma Eduzz. Não há envio de produto físico.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  3. Compra e Pagamento
-                </h2>
-                <ul className="list-disc pl-6 space-y-2 text-body text-text-secondary">
-                  <li>O pagamento é processado pela <strong>Eduzz</strong>, plataforma terceira de pagamentos.</li>
-                  <li>Formas de pagamento aceitas: Pix, Cartão de Crédito, Boleto Bancário.</li>
-                  <li>O acesso ao produto é liberado após a confirmação do pagamento:
-                    <ul className="list-circle pl-6 mt-2 space-y-1">
-                      <li><strong>Pix:</strong> imediato</li>
-                      <li><strong>Cartão:</strong> imediato (após aprovação)</li>
-                      <li><strong>Boleto:</strong> 1-2 dias úteis (após compensação)</li>
-                    </ul>
-                  </li>
-                  <li>Ao concluir a compra, você receberá um e-mail com o link de acesso ao produto.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  4. Garantia e Reembolso
-                </h2>
-                <p className="text-body text-text-secondary mb-4">
-                  Oferecemos <strong>garantia incondicional de 7 dias</strong> a partir da data de compra.
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-body text-text-secondary">
-                  <li>Se você não estiver satisfeito com o produto, pode solicitar reembolso integral dentro do prazo de 7 dias.</li>
-                  <li>Para solicitar reembolso, entre em contato diretamente com a Eduzz (área do comprador) ou com nosso suporte: <strong>natabdelf@gmail.com</strong></li>
-                  <li>O reembolso será processado em até 30 dias úteis, conforme política da Eduzz e da operadora de pagamento.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  5. Propriedade Intelectual
-                </h2>
-                <p className="text-body text-text-secondary mb-4">
-                  Todo o conteúdo do produto (textos, exercícios, design, estrutura) é de propriedade exclusiva do autor e está protegido por direitos autorais (Lei nº 9.610/98).
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-body text-text-secondary">
-                  <li><strong>É proibido:</strong> reproduzir, distribuir, compartilhar, revender ou modificar o conteúdo sem autorização expressa.</li>
-                  <li>O produto é de <strong>uso pessoal e intransferível</strong>.</li>
-                  <li>Violações de direitos autorais estão sujeitas a medidas legais.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  6. Limitação de Responsabilidade
-                </h2>
-                <p className="text-body text-text-secondary mb-4">
-                  O produto DESTRAVE 2026 é um <strong>guia informativo e educacional</strong>. Os resultados dependem da aplicação individual de cada usuário.
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-body text-text-secondary">
-                  <li><strong>Não garantimos resultados específicos</strong> (financeiros, pessoais, profissionais).</li>
-                  <li>O produto não substitui acompanhamento profissional (psicológico, médico, jurídico, etc.) quando necessário.</li>
-                  <li>O autor e o site não se responsabilizam por danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso (ou impossibilidade de uso) do produto.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  7. Uso do Site
-                </h2>
-                <ul className="list-disc pl-6 space-y-2 text-body text-text-secondary">
-                  <li>Você concorda em usar o site apenas para fins legais.</li>
-                  <li>É proibido: tentar hackear, interferir ou sobrecarregar o site; extrair dados de forma automatizada; usar o site para spam ou atividades fraudulentas.</li>
-                  <li>Reservamo-nos o direito de suspender ou encerrar o acesso de usuários que violem estes termos.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  8. Links de Terceiros
-                </h2>
-                <p className="text-body text-text-secondary">
-                  Este site pode conter links para sites de terceiros (como a Eduzz). Não nos responsabilizamos pelo conteúdo, políticas de privacidade ou práticas de sites externos.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  9. Modificações nos Termos
-                </h2>
-                <p className="text-body text-text-secondary">
-                  Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação nesta página. Recomendamos que você revise periodicamente esta página.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  10. Lei Aplicável e Foro
-                </h2>
-                <p className="text-body text-text-secondary">
-                  Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Quaisquer disputas decorrentes destes termos serão resolvidas no foro da comarca de [PREENCHER: cidade/estado do controlador], com exclusão de qualquer outro, por mais privilegiado que seja.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  11. Contato
-                </h2>
-                <p className="text-body text-text-secondary">
-                  Em caso de dúvidas sobre estes Termos de Uso, entre em contato:
-                  <br />
-                  <strong>E-mail:</strong> natabdelf@gmail.com
-                </p>
-              </section>
-
-              <section className="bg-bg-alt p-6 rounded-lg border-l-4 border-accent">
-                <h2 className="text-h3 font-bold text-text-primary mb-4">
-                  Informações Obrigatórias (Preencher)
-                </h2>
-                <p className="text-body text-text-secondary mb-4">
-                  <strong>Antes de publicar, preencha os seguintes campos:</strong>
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-body text-text-secondary">
-                  <li><strong>Controlador de Dados:</strong> [Nome completo ou razão social]</li>
-                  <li><strong>CPF ou CNPJ:</strong> [Número]</li>
-                  <li><strong>Endereço completo:</strong> [Rua, número, bairro, cidade, estado, CEP]</li>
-                  <li><strong>Foro competente:</strong> [Cidade/Estado]</li>
-                </ul>
-                <p className="text-body text-text-secondary mt-4 italic">
-                  Estes dados são necessários para conformidade com a LGPD e o Código de Defesa do Consumidor.
-                </p>
-              </section>
+          <div className="space-y-8">
+            <div>
+              <h1 className="text-h2-mobile md:text-h2-desktop font-bold text-text-primary mb-3">
+                Termos de Uso
+              </h1>
+              <p className="text-text-secondary">
+                <strong>Última atualização:</strong> 30 de dezembro de 2025
+              </p>
             </div>
-          </article>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                1. Aceitação dos termos
+              </h2>
+              <p>
+                Ao acessar este site e adquirir o produto, você concorda com os
+                termos descritos nesta página.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                2. Sobre o produto
+              </h2>
+              <p>
+                <strong>Produto:</strong> {CONFIG.PRODUCT_NAME} (ebook em PDF)
+                <br />
+                <strong>Formato:</strong> digital (download)
+                <br />
+                <strong>Preço:</strong> {CONFIG.PRICE_FORMATTED}
+              </p>
+              <p>
+                O acesso é entregue exclusivamente via Eduzz (e-mail e área do
+                comprador). Não há envio físico.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                3. Compra e pagamento
+              </h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>O checkout é processado pela Eduzz.</li>
+                <li>Formas de pagamento: Pix, cartão e boleto.</li>
+                <li>
+                  A liberação ocorre após confirmação do pagamento:
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Pix: imediato.</li>
+                    <li>Cartão: após aprovação.</li>
+                    <li>Boleto: após compensação.</li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                4. Garantia e reembolso
+              </h2>
+              <p>
+                Oferecemos garantia de {CONFIG.GUARANTEE_DAYS} dias. O reembolso
+                deve ser solicitado dentro do prazo pela Eduzz, conforme regras
+                da plataforma.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                5. Propriedade intelectual
+              </h2>
+              <p>
+                Todo o conteúdo do produto é protegido por direitos autorais. É
+                proibido copiar, distribuir, revender ou compartilhar o material
+                sem autorização.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                6. Limitação de responsabilidade
+              </h2>
+              <p>
+                O {CONFIG.PRODUCT_NAME} é um guia educacional. Resultados
+                dependem da aplicação individual. Não garantimos resultados
+                específicos.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                7. Uso do site
+              </h2>
+              <p>
+                Você concorda em usar o site de forma legal e respeitosa. É
+                proibido tentar acessar áreas restritas, interferir no
+                funcionamento do site ou utilizar o conteúdo de forma indevida.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                8. Links externos
+              </h2>
+              <p>
+                Este site pode conter links para plataformas de terceiros (como
+                a Eduzz). Não nos responsabilizamos pelo conteúdo dessas
+                plataformas.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                9. Alterações nos termos
+              </h2>
+              <p>
+                Podemos atualizar estes termos a qualquer momento. Recomendamos
+                revisar esta página periodicamente.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">
+                10. Lei aplicável e foro
+              </h2>
+              <p>
+                Estes termos são regidos pelas leis brasileiras. Fica eleito o
+                foro de <strong>[PREENCHER: CIDADE/UF]</strong> para dirimir
+                quaisquer conflitos.
+              </p>
+            </section>
+
+            <section className="space-y-3 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary">11. Contato</h2>
+              <p>
+                Em caso de dúvidas, entre em contato pelo e-mail{" "}
+                <strong>{CONFIG.SUPPORT_EMAIL}</strong>.
+              </p>
+            </section>
+
+            <section className="bg-bg-card border border-cta-primary rounded-xl p-6 text-text-secondary">
+              <h2 className="text-h3 font-bold text-text-primary mb-2">
+                Campos obrigatórios
+              </h2>
+              <p>
+                Antes de publicar, preencha:{" "}
+                <strong>[PREENCHER: NOME]</strong>,{" "}
+                <strong>[PREENCHER: CPF]</strong>,{" "}
+                <strong>[PREENCHER: ENDEREÇO COMPLETO]</strong>,{" "}
+                <strong>[PREENCHER: CIDADE/UF]</strong>.
+              </p>
+            </section>
+          </div>
         </div>
       </main>
     </div>

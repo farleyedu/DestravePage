@@ -1,107 +1,114 @@
+﻿import Image from "next/image";
 import { CONFIG } from "@/lib/config";
 import SectionReveal from "./SectionReveal";
-import Image from "next/image";
 
 /**
- * Seção "O que tem dentro"
- * Tangibiliza o conteúdo do PDF (capítulos + exercícios)
+ * Secao "O que tem dentro" (capitulos + exercicios + previews).
  */
 export default function Contents() {
+  const previewPages = [
+    {
+      label: "Capa",
+      src: "/images/page-preview-1.png",
+      alt: "Capa do livro Destrave 2026",
+    },
+    {
+      label: "Pagina 02",
+      src: "/images/page-preview-2.png",
+      alt: "Pagina com aviso importante",
+    },
+    {
+      label: "Pagina 03",
+      src: "/images/page-preview-3.png",
+      alt: "Pagina explicando o que e destravar",
+    },
+    {
+      label: "Pagina 14",
+      src: "/images/page-preview-4.png",
+      alt: "Pagina sobre desconforto e crescimento",
+    },
+  ];
+
   return (
     <section id="conteudo" className="py-section-mobile md:py-section-desktop bg-bg-alt">
       <div className="container-custom">
         <SectionReveal>
-          {/* Título */}
           <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-text-primary text-center mb-4">
-            O que você vai encontrar
+            O que tem dentro
           </h2>
-
-          {/* Badge de leitura */}
           <div className="flex justify-center mb-12">
-            <span className="inline-block bg-accent/10 text-accent px-4 py-2 rounded-md text-sm font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-bg-card/60 text-sm text-text-secondary">
               Leitura em 1 sentada ({CONFIG.READING_TIME})
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Coluna 1: Capítulos */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
             <div className="space-y-6">
-              <h3 className="text-h3 font-bold text-text-primary mb-6">
-                5 Capítulos
+              <h3 className="text-h3 font-bold text-text-primary">
+                5 capÃ­tulos
               </h3>
               <div className="space-y-3">
                 {CONFIG.CHAPTERS.map((chapter, index) => (
                   <div
-                    key={index}
-                    className="flex items-start gap-3 p-4 bg-bg-card border border-border rounded-lg hover:shadow-md transition-smooth"
+                    key={chapter}
+                    className="flex items-start gap-3 p-4 bg-bg-card border border-border rounded-lg hover:border-cta-primary transition-smooth"
                   >
-                    <span className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-bold">
+                    <span className="flex-shrink-0 w-7 h-7 bg-cta-primary text-black rounded-full flex items-center justify-center text-xs font-semibold">
                       {index + 1}
                     </span>
-                    <p className="text-base text-text-primary font-medium">
-                      {chapter}
-                    </p>
+                    <p className="text-base text-text-secondary">{chapter}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Coluna 2: Exercícios */}
             <div className="space-y-6">
-              <h3 className="text-h3 font-bold text-text-primary mb-6">
-                5 Exercícios Práticos
+              <h3 className="text-h3 font-bold text-text-primary">
+                5 exercÃ­cios prÃ¡ticos
               </h3>
               <div className="space-y-3">
-                {CONFIG.EXERCISES.map((exercise, index) => (
+                {CONFIG.EXERCISES.map((exercise) => (
                   <div
-                    key={index}
-                    className="flex items-start gap-3 p-4 bg-bg-card border border-border rounded-lg hover:shadow-md transition-smooth"
+                    key={exercise}
+                    className="flex items-start gap-3 p-4 bg-bg-card border border-border rounded-lg hover:border-cta-primary transition-smooth"
                   >
-                    <span className="text-success text-xl flex-shrink-0">✓</span>
-                    <p className="text-base text-text-primary">
-                      {exercise}
-                    </p>
+                    <span className="mt-2 h-2 w-2 rounded-full bg-success flex-shrink-0" />
+                    <p className="text-base text-text-secondary">{exercise}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Preview visual (placeholders) */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <p className="text-center text-text-secondary mb-6 text-sm">
-              Preview do conteúdo:
-            </p>
-            <div className="grid grid-cols-3 gap-4">
-              {[1, 2, 3].map((n) => (
-                <div
-                  key={n}
-                  className="relative aspect-[3/4] bg-bg-card border border-border rounded-lg overflow-hidden hover:scale-105 transition-smooth"
-                >
-                  {/* Placeholder: substituir por screenshots reais do PDF */}
-                  <div className="w-full h-full bg-gradient-to-br from-bg-alt to-bg-card flex items-center justify-center">
-                    <div className="text-center p-6 space-y-3 opacity-50">
-                      <div className="h-2 bg-gray-300 rounded w-3/4 mx-auto"></div>
-                      <div className="h-2 bg-gray-300 rounded w-full"></div>
-                      <div className="h-2 bg-gray-300 rounded w-5/6 mx-auto"></div>
-                      <div className="mt-4 h-1 bg-gray-200 rounded w-full"></div>
-                      <div className="h-1 bg-gray-200 rounded w-full"></div>
-                      <div className="h-1 bg-gray-200 rounded w-4/5 mx-auto"></div>
+          <div className="mt-16">
+            <div className="rounded-3xl bg-gradient-to-b from-[#0E0E0E] to-[#1F1F1F] border border-border p-6 md:p-10">
+              <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0 md:gap-6">
+                {previewPages.map((page) => (
+                  <article
+                    key={page.src}
+                    className="min-w-[220px] sm:min-w-[240px] md:min-w-0 flex flex-col gap-4 bg-[#0E0E0E] text-text-primary rounded-2xl border border-border px-4 py-4 shadow-[0_16px_36px_rgba(0,0,0,0.18)] transition-smooth md:hover:-translate-y-1 md:hover:shadow-[0_20px_44px_rgba(0,0,0,0.22)]"
+                  >
+                    <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-border-strong bg-black/60">
+                      <Image
+                        src={page.src}
+                        alt={page.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 220px, (max-width: 1024px) 240px, 260px"
+                      />
                     </div>
-                  </div>
-                  {/* Comentário para substituição */}
-                  <div className="absolute bottom-2 left-2 right-2 bg-black/70 text-white text-xs p-2 rounded text-center">
-                    Página {n}
-                  </div>
-                </div>
-              ))}
+                    <div className="text-[0.65rem] uppercase tracking-[0.35em] text-text-muted text-center">
+                      {page.label}
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
-            <p className="text-center text-text-muted text-xs mt-4 italic">
-              * Substitua os placeholders por screenshots reais do PDF em /public/images/
-            </p>
           </div>
         </SectionReveal>
       </div>
     </section>
   );
 }
+
+
